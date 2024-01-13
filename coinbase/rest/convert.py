@@ -29,13 +29,12 @@ def create_convert_quote(
         "user_incentive_id": user_incentive_id,
         "code_val": code_val,
     }
-    filtered_trade_incentive_metadata = {
+
+    if filtered_trade_incentive_metadata := {
         key: value
         for key, value in trade_incentive_metadata.items()
         if value is not None
-    }
-
-    if filtered_trade_incentive_metadata:
+    }:
         data["trade_incentive_metadata"] = filtered_trade_incentive_metadata
 
     return self.post(endpoint, data=data, **kwargs)
