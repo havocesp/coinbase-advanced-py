@@ -40,11 +40,11 @@ class RESTBase(object):
     ):
         if api_key is None:
             raise Exception(
-                f"Must specify env var COINBASE_API_KEY or pass api_key in constructor"
+                "Must specify env var COINBASE_API_KEY or pass api_key in constructor"
             )
         if api_secret is None:
             raise Exception(
-                f"Must specify env var COINBASE_API_SECRET or pass api_secret in constructor"
+                "Must specify env var COINBASE_API_SECRET or pass api_secret in constructor"
             )
         self.api_key = api_key
         self.api_secret = bytes(api_secret, encoding="utf8").decode("unicode_escape")
